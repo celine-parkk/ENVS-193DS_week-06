@@ -1,0 +1,40 @@
+---
+title: "week 6"
+format: html
+editor: visual
+---
+Loading packages
+```{r package-set-up}
+  #runs code chunk by code chunk
+
+library(tidyverse) #general usage
+library(here) #organization
+library(naniar) #missing data visualization
+library(skimr) #quick glimpse at data
+library(plotly) #interactive plots
+library(magick) #insert images into plots
+library(NatParksPalettes) #one example of color palette package
+library(wesanderson) #another example of color palette package
+library(patchwork) #put plots together
+
+
+```
+
+# load in data
+```{r loading-data}
+#create a new projext called whales
+#read in the whales data
+whales <- read_csv(here("data", "Graywhale_watching_2007_2019.csv"))
+```
+
+look at missing data:
+```{r missing-data-vis}
+gg_miss_var(whales)
+
+```
+
+use 'skim' package to quickly glimpse the data
+```{r glimpse-of-data-using-skimr}
+skim()
+```
+
